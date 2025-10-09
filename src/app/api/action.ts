@@ -4,8 +4,10 @@ import {google} from "googleapis";
 export const formSubmit = async (prevState:any, formData:FormData) => { 
     const name = formData.get('name');
     const phone = formData.get('phone');
+    const eventOption = formData.get('eventOption');
     const plusOne = formData.get('plusOne');
-    const plusOneName = formData.get('plusOneName'); 
+    const plusOneName = formData.get('plusOneName');
+    const plusOneWhatsAppNumber = formData.get('plusOneWhatsAppNumber');
  
     if(!name || !phone ){
         return {
@@ -49,8 +51,10 @@ export const formSubmit = async (prevState:any, formData:FormData) => {
                         new Date().toLocaleDateString(),
                         name,
                         phone, 
+                        eventOption,
                         plusOne,
                         plusOneName,
+                        plusOneWhatsAppNumber
                     ]
 
                 
