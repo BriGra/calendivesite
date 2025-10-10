@@ -42,16 +42,16 @@ export const formSubmit = async (prevState:any, formData:FormData) => {
         });
         const response = await sheets.spreadsheets.values.append({
             // spreadsheetId: process.env.GOOGLE_SHEET_ID,
-            spreadsheetId: '1LkcJyLU2H5HIdcPxEXWyp-rFhwVoPft_3uzySL62amY',
+            spreadsheetId: '1YabreOfbr8PPlWKEj4xDdrsiiLPSgot-2zArJGqGPxE',
             range: 'A1:E1',
             valueInputOption: 'USER_ENTERED',
             requestBody: {
                 values: [
                     [
                         new Date().toLocaleDateString(),
-                        name,
-                        phone, 
                         eventOption,
+                        name,
+                        phone,
                         plusOne,
                         plusOneName,
                         plusOneWhatsAppNumber

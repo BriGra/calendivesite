@@ -55,46 +55,49 @@ const TraceyFormData = () =>{
             {!submitted? (
                 <div className="md:flex text-red-800 py-10 px-5 md:px-20 min-h-screen w-full ">
                     <div className="order-1 md:order-2 w-full md:w-[50%] ">
-                        <div className="w-full text-center space-y-4 p-5 pl-15">
+                        <div className="w-full text-center space-y-4 pl-15">
                             <h1 className="uppercase text-2xl tracking-widest text-red-800 font-bold">
                                 TRACEY&apos;S BIRTHDAY CELEBRATION - RSVP
                             </h1>
                             <div>
-                                <p className="text-sm text-red-500 font-monteserrat font-semibold leading-[20px] ">
-                                    We&apos;re thrilled to invite you to Tracey&apos;s unforgettable birthday bash and you are officially on the guest list! A two-day celebration at two incredible venues! Please fill out the form below to confirm your attendance. <br />
-                                    Plus One Policy: You&apos;re welcome to bring a plus one! Please note that you will be personally responsible for all costs incurred by your guest during the event, including food, beverages, and any other charges.
+                                <p className="text-sm text-red-800 font-monteserrat font-normal leading-[20px] ">
+                                    We&apos;re thrilled to invite you to Tracey&apos;s unforgettable birthday bash and you are officially on the guest list! A two-day celebration at two incredible venues! Please fill out the form below to confirm your attendance.
+                                   
+                                </p>
+                                <p className="text-sm text-red-800 font-monteserrat font-normal leading-[20px] mt-3">
+                                    <b>Plus One Policy:</b> You&apos;re welcome to bring a plus one! Please note that you will be personally responsible for all costs incurred by your guest during the event, including food, beverages, and any other charges.
                                 </p>
 
-                                <p className="text-lg text-red-600 font-bold font-monteserrat mt-5 ">
+                                <p className="text-xl text-red-800 font-bold font-monteserrat mt-5 ">
                                    Event Details: 
                                 </p>
-                                <p className="text-lg text-red-600 font-bold font-monteserrat mt-5">Day 1: MAKō - October 16th, 9PM</p>
+                                <p className="text-md text-red-800 font-monteserrat mt-5"><span className="font-bold">Day 1: </span>MAKō - October 16<sup>th</sup>, 9PM</p>
 
-                                <p className="text-lg text-red-600 font-bold font-monteserrat mt-5">Day 2: Mr. Panther - October 17th, 9PM</p>
+                                <p className="text-md text-red-800 font-monteserrat mt-5"><span className="font-bold">Day 2: </span>Mr. Panther - October 17<sup>th</sup>, 9PM</p>
 
-                                {/* <p className="text-lg text-red-600 font-semibold font-monteserrat mt-5">Please select which event(s) you'll be attending:</p>
+                                {/* <p className="text-lg text-red-800 font-semibold font-monteserrat mt-5">Please select which event(s) you'll be attending:</p>
 
-                                <p className="text-sm text-red-600 font-monteserrat mt-5">- I&apos;ll join the celebration at MAKō only.</p>
+                                <p className="text-sm text-red-800 font-monteserrat mt-5">- I&apos;ll join the celebration at MAKō only.</p>
 
-                                <p className="text-sm text-red-600 font-monteserrat mt-5">- I&apos;ll dine and party at Mr. Panther only.</p>
+                                <p className="text-sm text-red-800 font-monteserrat mt-5">- I&apos;ll dine and party at Mr. Panther only.</p>
 
-                                <p className="text-sm text-red-600 font-monteserrat mt-5">- I&apos;m all in for both nights!</p>
+                                <p className="text-sm text-red-800 font-monteserrat mt-5">- I&apos;m all in for both nights!</p>
 
-                                <p className="text-lg text-red-600 font-bold font-monteserrat mt-5">Your Details:</p>
+                                <p className="text-lg text-red-800 font-bold font-monteserrat mt-5">Your Details:</p>
 
-                                <p className="text-sm text-red-600 font-semibold font-monteserrat mt-5">Full Name (required)</p>
+                                <p className="text-sm text-red-800 font-semibold font-monteserrat mt-5">Full Name (required)</p>
 
-                                <p className="text-sm text-red-600 font-semibold font-monteserrat mt-5">WhatsApp Phone Number (with correct country code)</p>  */}
+                                <p className="text-sm text-red-800 font-semibold font-monteserrat mt-5">WhatsApp Phone Number (with correct country code)</p>  */}
 
-                                <p className="text-lg text-red-600 font-bold font-monteserrat mt-5">RSVP DEADLINE:</p>
-                                <p className="text-sm text-red-600 font-monteserrat mt-5">All guests must RSVP by October 14th, no later than noon. No RSVP, no entry—strictly enforced!</p>
+                                <p className="text-lg text-red-800 font-bold font-monteserrat mt-5">RSVP DEADLINE:</p>
+                                <p className="text-sm text-red-800 font-monteserrat mt-5">All guests must RSVP by <b>October 14<sup>th</sup></b>, no later than noon. No RSVP, no entry—strictly enforced!</p>
 
-                                <p className="text-sm text-red-600 font-monteserrat mt-5">We can&apos;t wait to celebrate with you. Choose your event preference and see you there!</p>
+                                <p className="text-sm text-red-800 font-monteserrat mt-5">We can&apos;t wait to celebrate with you. Choose your event preference and see you there!</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="order-2 md:order-1 text-red-600 p-6 w-full md:w-[50%]">
+                    <div className="order-2 md:order-1 text-red-800 w-full md:w-[50%] px-0 md:px-6 py-5 md:py-0">
                         <form onSubmit={handleSubmit} className="w-full rounded-xl block">
                             <div className="py-4">
                                 <label className="block text-sm font-medium mb-3">
@@ -169,7 +172,7 @@ const TraceyFormData = () =>{
                                         name="plusOne"
                                         value="Yes"
                                         onChange={() => setBringingPlusOne(true)}
-                                        className="text-black"
+                                        className="text-black mr-3"
                                     />
                                     <span>Yes</span>
                                     </label>
@@ -179,7 +182,7 @@ const TraceyFormData = () =>{
                                         name="plusOne"
                                         value="No"
                                         onChange={() => setBringingPlusOne(false)}
-                                        className="text-black"
+                                        className="text-black mr-3"
                                     />
                                     <span>No</span>
                                     </label>
@@ -201,7 +204,7 @@ const TraceyFormData = () =>{
                                             className="w-full px-4 py-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
                                         />
                                     </div>
-                                    <div className="">
+                                    <div className="mt-3">
                                         <label htmlFor="plusOneName" className="block text-sm font-medium mb-3">
                                             Plus One WhatsApp Number
                                         </label>
@@ -217,7 +220,7 @@ const TraceyFormData = () =>{
                                 </div>
                             )}
 
-                            <button type="submit" className="w-full py-3 bg-red-800 text-white font-semibold rounded hover:bg-gray-200 transition" disabled={processing}>
+                            <button type="submit" className="w-full py-3 bg-red-800 text-white font-semibold rounded hover:bg-red-600 transition" disabled={processing}>
                                 {processing?(
                                     'Processing'
                                 ):(
