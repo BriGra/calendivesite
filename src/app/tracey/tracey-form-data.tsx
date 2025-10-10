@@ -8,6 +8,7 @@ import { formSubmit } from "@/app/api/action";
 const TraceyFormData = () =>{
     const router = useRouter();
     const [processing, setProcessing] = useState(false);
+    const [bringingPlusOne, setBringingPlusOne] = useState<boolean | null>(null);
     const [submitted, setSubmitted] = useState(false);
     const [state, formAction] = useFormState(formSubmit, {
         error: '',
@@ -56,13 +57,13 @@ const TraceyFormData = () =>{
                     <div className="order-1 md:order-2 w-full md:w-[50%] ">
                         <div className="w-full text-center space-y-4 p-5 pl-15">
                             <h1 className="uppercase text-2xl tracking-widest text-red-800 font-bold">
-                                 TRACEYS BIRTHDAY CELEBRATION - RSVP
+                                TRACEY&apos;S BIRTHDAY CELEBRATION - RSVP
                             </h1>
                             <div>
                                 <p className="text-sm text-red-500 font-monteserrat font-semibold leading-[20px] ">
-                                    We&apos;re thrilled to invite you to Tracey's unforgettable birthday bash and you are officially on the guest list! A two-day celebration at two incredible venues! Please fill out the form below to confirm your attendance.
+                                    We&apos;re thrilled to invite you to Tracey&apos;s unforgettable birthday bash and you are officially on the guest list! A two-day celebration at two incredible venues! Please fill out the form below to confirm your attendance. <br />
+                                    Plus One Policy: You&apos;re welcome to bring a plus one! Please note that you will be personally responsible for all costs incurred by your guest during the event, including food, beverages, and any other charges.
                                 </p>
-                                <p className="text-red-600 text-sm font-monteserrat leading-[20px] font-bold mt-4">Important: This is an exclusive event, no plus ones allowed.</p>
 
                                 <p className="text-lg text-red-600 font-bold font-monteserrat mt-5 ">
                                    Event Details: 
@@ -97,7 +98,7 @@ const TraceyFormData = () =>{
                         <form onSubmit={handleSubmit} className="w-full rounded-xl block">
                             <div className="py-4">
                                 <label className="block text-sm font-medium mb-3">
-                                   Please select which event(s) you'll be attending:
+                                   Please select which event(s) you&apos;ll be attending:
                                 </label>
                                 <div className="">
                                     <label className="flex items-center mb-3">
@@ -157,6 +158,64 @@ const TraceyFormData = () =>{
                                     className="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white"
                                 />
                             </div>
+                            <div className="py-4">
+                                <label className="block text-sm font-medium mb-3">
+                                    Will you be bringing a plus one?
+                                </label>
+                                <div className="flex items-center space-x-4">
+                                    <label className="flex items-center mb-3">
+                                    <input
+                                        type="radio"
+                                        name="plusOne"
+                                        value="Yes"
+                                        onChange={() => setBringingPlusOne(true)}
+                                        className="text-black"
+                                    />
+                                    <span>Yes</span>
+                                    </label>
+                                    <label className="flex items-center mb-3">
+                                    <input
+                                        type="radio"
+                                        name="plusOne"
+                                        value="No"
+                                        onChange={() => setBringingPlusOne(false)}
+                                        className="text-black"
+                                    />
+                                    <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            {bringingPlusOne && (
+                                <div className="py-4">
+                                    <div className="">
+                                        <label htmlFor="plusOneName" className="block text-sm font-medium mb-3">
+                                            Full Name of Plus One
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="plusOneName"
+                                            name="plusOneName"
+                                            required
+                                            placeholder="First and last name"
+                                            className="w-full px-4 py-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
+                                        />
+                                    </div>
+                                    <div className="">
+                                        <label htmlFor="plusOneName" className="block text-sm font-medium mb-3">
+                                            Plus One WhatsApp Number
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            id="plusOneWhatsAppNumber"
+                                            name="plusOneWhatsAppNumber"
+                                            required
+                                            placeholder="Plus One WhatsApp Number"
+                                            className="w-full px-4 py-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
+                                        />
+                                    </div>
+                                </div>
+                            )}
 
                             <button type="submit" className="w-full py-3 bg-red-800 text-white font-semibold rounded hover:bg-gray-200 transition" disabled={processing}>
                                 {processing?(
@@ -170,17 +229,17 @@ const TraceyFormData = () =>{
                 </div>
             ):(
                 <div className="text-red-800 py-20 px-5 md:px-20 min-h-screen w-full ">
-                    <p className="py-3">Thank you for RSVPing to Tracey's Birthday Soirée, we're excited to have you on the guest list!</p>
+                    <p className="py-3">Thank you for RSVPing to Tracey&apos;s Birthday Celebration, we&apos;re excited to have you on the guest list!</p>
 
                     <p className="py-3">Please note the following:
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Your unique entry code will be sent to the WhatsApp number you provided.</li>
-                            <li>If you indicated that you're bringing a plus one, please follow up to confirm their verification and approval.</li>
+                            <li>If you indicated that you&apos;re bringing a plus one, please follow up to confirm their verification and approval.</li>
                             <li>Entry will only be granted with a valid code, so be sure to check your WhatsApp messages as the event date approaches.</li>
                         </ul>
                     </p>
 
-                    <p className="py-3">We can't wait to celebrate with great music, good vibes, and unforgettable moments. Dress to impress and get ready for a night to remember.</p>
+                    <p className="py-3">We can&apos;t wait to celebrate with great music, good vibes, and unforgettable moments. Dress to impress and get ready for a night to remember.</p>
 
                     <p className="pt-3">See you soon!</p>
                 </div>
